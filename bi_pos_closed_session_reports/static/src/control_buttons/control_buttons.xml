@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="bi_pos_closed_session_reports.ControlButtons" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if='props.showRemainingButtons']/div/OrderlineNoteButton" position="after">
+            <button t-if="this.printZReportAllowed" class="o_z_report_button btn btn-secondary btn-lg py-5" t-on-click="() => this.clickPrintZReport()">
+                <i class="fa fa-print me-2" role="img" aria-label="Z Report" title="Z Report" />
+                <t>Z Report</t>
+            </button>
+        </xpath>
+    </t>
+</templates>

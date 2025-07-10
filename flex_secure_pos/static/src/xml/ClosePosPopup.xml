@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="flex_secure_pos.ClosePosPopup" t-inherit="point_of_sale.ClosePosPopup" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('total-orders')]" position="replace">
+        </xpath>
+        <xpath expr="//div[hasclass('payment-methods-overview')]" position="replace">
+        </xpath>
+        <xpath expr="//div[@class='w-100 mb-3']" position="replace">
+        </xpath>
+
+
+        <xpath expr="//button[@t-on-click='downloadSalesReport']" position="replace"/>
+        <xpath expr="//button[@t-on-click='openDetailsPopup']" position="replace"/>
+        <xpath expr="//button[@t-on-click='autoFillCashCount']" position="replace"/>
+
+        <xpath expr="//button[@t-if='hardwareProxy.printer']" position="replace"/>
+        <xpath expr="//button[.='Cash In/Out']" position="replace">
+        <button t-if="pos.config.use_cash_in_out"
+                class="button btn btn-secondary"
+                t-att-class="this.ui.isSmall ? 'w-100' : 'btn-lg'"
+                t-on-click="() => this.cashMove()">Cash In/Out</button>
+</xpath>
+
+
+
+    </t>
+
+
+</templates>
+

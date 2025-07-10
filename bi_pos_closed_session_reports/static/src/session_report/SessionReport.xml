@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="bi_pos_closed_session_reports.SessionReportButton">
+        <div class="control-button btn btn-light rounded-0 fw-bolder"
+             t-attf-class="{{printSessionReportAllowed() ? 'highlight' : 'disabled'}}"
+             t-on-click="() => this.click()">
+            <i class="fa fa-file-text me-2" role="img" aria-label="Print Session Report" title="Print Session Report" />
+            Print Session Report
+        </div>
+    </t>
+</templates>
